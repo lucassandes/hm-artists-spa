@@ -1,33 +1,32 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 
-import Artist from './components/artist.js';
-import Home from './components/home';
+import Artist from './components/Artist.jsx';
+import Home from './components/Home.jsx';
 import './css/App.css';
-import SearchBar from './components/searchBar';
+import SearchBar from './components/SearchBar.jsx';
 
 class App extends Component {
   constructor(){
     super();
     this.state = {
-      artistName: "teste"
-
+      artist: null,
+      events: null
     };
+    this.updateState = this.updateState.bind(this);
   }
+
+
+  updateState(key, value) {
+    this.setState({ [key]: value});
+  }
+  
   render() {
     return (
      
         <div className="App">
-          {/* <header className="App-header">
-            <img src={logo} className="App-logo" alt="logo" />
-            <h1 className="App-title">Welcome to React</h1>
-          </header>
-          <p className="App-intro">
-            To get started, edit <code>src/App.js</code> and save to reload.
-          </p> */}
-         
-          <SearchBar/>
-          <Artist artist={this.state}/>
+          <SearchBar updateState={this.updateState} />
+          <Artist artist={this.state.artist} />
         </div>
        
       
