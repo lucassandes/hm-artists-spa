@@ -1,4 +1,5 @@
 import React from 'react';
+import ArtistEvent from './ArtistEvent.jsx';
 
 const Artist = ({ artist, events }) => {
   if (!artist) {
@@ -13,9 +14,6 @@ const Artist = ({ artist, events }) => {
       <img src={artist.thumb_url} alt="logo" />
       <h1>{artist.name}</h1>
       <h2>{artist.facebook_page_url}</h2>
-
-      <h3>Upcoming Events {artist.upcoming_event_count}</h3>
-      
     </div>
   );
 };
