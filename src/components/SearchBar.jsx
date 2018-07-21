@@ -10,7 +10,7 @@ class SearchBar extends Component {
         super(props);
         console.log(props);
         this.state = {
-            artistName: ""
+            artistName: "paramore"
         };
         this.searchArtist = this.searchArtist.bind(this);
         this.handleChange = this.handleChange.bind(this);
