@@ -6,18 +6,34 @@ const Event = ({ event }) => {
       <div>Search an artist...</div>
     );
   }
-//   Event Venue
-//   ■ Event City
-//   ■ Event Country
-//   ■ Event Date
-  return (
-    <div>
-      <h2>{event.datetime}</h2>
-      <h3>{event.venue.name}</h3>
-      <h4>{event.venue.city}</h4>
-      <h4>{event.venue.country}</h4>
 
-      
+
+  //   Event Venue
+  //   ■ Event City
+  //   ■ Event Country
+  //   ■ Event Date
+  const eventDate = new Date(event.datetime);
+
+  return (
+    <div className="artist-event__event d-flex-center">
+      <div className="artist-event__date">
+        <div className="artist-event__month">
+          {eventDate.toLocaleDateString('en-US', { month: 'short' })}
+        </div>
+        <div className="artist-event__day">
+          {eventDate.getDay()}
+        </div>
+      </div>
+
+      <div className="artist-event__venue-info">
+        <div className="artist-event__venue-name">{event.venue.name}</div>
+        <div className="artist-event__venue-city">{event.venue.city}</div>
+        <div className="artist-event__venue-country">{event.venue.country}</div>
+      </div>
+
+      {/* <a class="button" href={event.offers[0].url} target="_blank" > {event.offers[0].type} </a> */}
+
+
     </div>
   );
 };
