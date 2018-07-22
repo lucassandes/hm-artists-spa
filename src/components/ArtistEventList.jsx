@@ -2,11 +2,17 @@ import React from 'react';
 import ArtistEvent from './ArtistEvent.jsx';
 
 const ArtistEventList = ({ events }) => {
+   
     if (!events) {
         return (
-            <div>No events!</div>
+            <div>Loading...</div>
+        );
+    } else if(events.length === 0) {
+        return(
+            <div>No Events found</div>
         );
     }
+
     const eventItems = events.map((event) => {
         return (
             <ArtistEvent
@@ -17,8 +23,8 @@ const ArtistEventList = ({ events }) => {
 
 
     return (
-        <div className="col-md-4 list-group">
-            <h3>Upcoming Events </h3>
+        <div className="card artist-events">
+            <h3 className="artist-events__title">Upcoming Events</h3>
             {eventItems}
         </div>
     );
