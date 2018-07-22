@@ -1,0 +1,61 @@
+.artist-events {
+    text-align: left;
+    margin-left: -20px;
+    margin-right: -20px;
+    margin-bottom: 3.0rem;
+}
+
+.artist-events__title {
+    color: $gray-500;
+    font-size: 2.4rem;
+    margin-bottom: 2.0rem;
+}
+/* Larger than phablet */
+
+@media (min-width: $breakpoint) {
+    .artist-events {
+        margin-left: 0;
+        margin-right: 0;
+        padding: 1.5rem;
+    }
+}
+
+.artist-event__event {
+    border-bottom: 1px solid $gray-300;
+    margin-bottom: 2.0rem;
+    padding-bottom: 2.0rem;
+}
+
+.artist-event__event:last-child {
+    border: none;
+}
+
+.artist-event__date {
+    border: 1px solid $gray-200;
+    display: inline-block;
+    margin-right: 1.5rem;
+}
+
+.artist-event__month {
+    background: $red;
+    color: $white;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    text-transform: uppercase;
+}
+
+.artist-event__day {
+    font-size: 2.4rem;
+    text-align: center;
+}
+
+.artist-event__venue-name {
+    font-weight: bold;
+    font-size: 1.6rem;
+}
+
+.artist-event__venue-city,
+.artist-event__venue-country {
+    font-weight: 500;
+    font-size: 1.4rem;
+}

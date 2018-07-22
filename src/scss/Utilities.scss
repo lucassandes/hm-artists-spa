@@ -1,0 +1,14 @@
+.d-flex-center {
+    display: flex;
+    align-items: center;
+}
+
+.p-relative {
+    position: relative;
+}
+
+.card {
+    background: $white;
+    border: 1px solid $gray-300;
+    padding: 2.0rem;
+}
