@@ -1,17 +1,28 @@
 
 .artist-info {
     flex-wrap: wrap;
-    margin-bottom: 2.0rem;
+    margin-bottom: 1.0rem;
     text-align: center;
     justify-content: center;
 }
+@media (min-width: $breakpoint) {
+    .artist-info {
+        margin-bottom: 2.0rem;
+    }
+}
+
 
 .artist-name {
     font-weight: bolder;
-    font-size: 3.0rem;
+    font-size: 2.0rem;
     display: block;
     // margin-right: 2.0rem;
     margin-bottom: 2.0rem;
+}
+@media (min-width: $breakpoint) {
+    .artist-name {
+        font-size: 3.0rem;
+    }
 }
 
 .on-tour-badge {
@@ -27,19 +38,27 @@
 
 .artist-picture {
     border-radius: 50%;
-    max-width: 200px;
     display: block;
     margin: 0 auto;
-    border: 10px solid white;
-    
+    background: $gray-200;
+    max-width: 8.5rem;
+    margin-bottom: 2rem;
 }
-
-/* Larger than phablet */
 
 @media (min-width: $breakpoint) {
     .artist-picture {
         width: 100%;
+        max-width: 20rem;
     }
 }
 
-.artist-facebook {}
+.artist-404 {
+    color: $gray-400;
+    position: absolute;
+    width: 100%;
+    font-weight: bold;
+    text-align: center;
+    font-size: 2.4rem;
+}
+
+

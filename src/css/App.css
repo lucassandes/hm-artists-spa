@@ -8,11 +8,75 @@
 .card {
   background: #ffffff;
   border: 1px solid #dee2e6;
-  padding: 2.0rem; }
+  padding: 2.0rem;
+  margin-bottom: 2.0rem; }
+
+.bg-gray-200 {
+  background: #e9ecef; }
+
+.ui-loader__date {
+  border: 1px solid #e9ecef;
+  display: inline-block;
+  margin-right: 1.5rem;
+  width: 5.6rem;
+  height: 6.4rem; }
+
+.ui-loader__month {
+  height: 2.4rem;
+  background: #e9ecef;
+  color: #ffffff;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  text-transform: uppercase; }
+
+.ui-loader_day {
+  font-size: 2.4rem;
+  height: 3.8rem;
+  text-align: center; }
+
+.ui-loader__big-block,
+.ui-loader__small-block,
+.ui-loader__medium-block {
+  height: 1.6rem;
+  margin-bottom: 0.7rem;
+  max-width: 100%; }
+
+.ui-loader__big-block:last-child,
+.ui-loader__small-block:last-child,
+.ui-loader__medium-block:last-child {
+  margin-bottom: 0; }
+
+.ui-loader__big-block {
+  width: 20rem; }
+
+.ui-loader__big-block--tall {
+  height: 2.4rem;
+  margin-bottom: 2.0rem; }
+
+.ui-loader__small-block {
+  width: 10rem; }
+
+.ui-loader__medium-block {
+  width: 15rem; }
+
+.ui-loader__circle {
+  position: relative;
+  border-radius: 50%;
+  width: 8.5rem;
+  height: 8.5rem;
+  margin: 0 auto;
+  margin-bottom: 2rem; }
+
+@media (min-width: 550px) {
+  .ui-loader__circle {
+    width: 100%;
+    height: auto;
+    padding-top: 100%;
+    margin-bottom: 2rem; } }
 
 .header {
   background: white;
-  border: 1px solid #dee2e6;
+  border-bottom: 1px solid #dee2e6;
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
   margin-bottom: 2.0rem; }
@@ -36,15 +100,23 @@ input.search-bar__input {
 
 .artist-info {
   flex-wrap: wrap;
-  margin-bottom: 2.0rem;
+  margin-bottom: 1.0rem;
   text-align: center;
   justify-content: center; }
 
+@media (min-width: 550px) {
+  .artist-info {
+    margin-bottom: 2.0rem; } }
+
 .artist-name {
   font-weight: bolder;
-  font-size: 3.0rem;
+  font-size: 2.0rem;
   display: block;
   margin-bottom: 2.0rem; }
+
+@media (min-width: 550px) {
+  .artist-name {
+    font-size: 3.0rem; } }
 
 .on-tour-badge {
   text-transform: uppercase;
@@ -57,15 +129,24 @@ input.search-bar__input {
 
 .artist-picture {
   border-radius: 50%;
-  max-width: 200px;
   display: block;
   margin: 0 auto;
-  border: 10px solid white; }
+  background: #e9ecef;
+  max-width: 8.5rem;
+  margin-bottom: 2rem; }
 
-/* Larger than phablet */
 @media (min-width: 550px) {
   .artist-picture {
-    width: 100%; } }
+    width: 100%;
+    max-width: 20rem; } }
+
+.artist-404 {
+  color: #ced4da;
+  position: absolute;
+  width: 100%;
+  font-weight: bold;
+  text-align: center;
+  font-size: 2.4rem; }
 
 .artist-events {
   text-align: left;
@@ -118,9 +199,15 @@ input.search-bar__input {
   font-weight: 500;
   font-size: 1.4rem; }
 
+.artist-event__404 {
+  color: #ced4da;
+  font-weight: bold;
+  text-align: center;
+  font-size: 2.4rem; }
+
 .header {
   background: white;
-  border: 1px solid #dee2e6;
+  border-bottom: 1px solid #dee2e6;
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
   margin-bottom: 2.0rem; }
@@ -142,6 +229,10 @@ input.search-bar__input {
 .search-bar__icon {
   height: 2.0rem; }
 
+html, body, #root {
+  height: 100%; }
+
 .App {
   text-align: center;
-  background-color: #f8f9fa; }
+  background-color: #f8f9fa;
+  min-height: 100%; }
