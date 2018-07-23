@@ -1,12 +1,12 @@
 # Artist SPA
 
-Simple SPA app to find concerts/events of artists. 
+Simple SPA to find concerts/events of artists. 
 
 ## [LIVE DEMO](https://lucassandes.github.io/hm-artists-spa/)
 
 ## Running Locally
 1. Download this repo
-2. Install the dependencies `$ npm i`
+2. Install its dependencies `$ npm i`
 3. Start the project `$ npm start`
 
 ## Testing
