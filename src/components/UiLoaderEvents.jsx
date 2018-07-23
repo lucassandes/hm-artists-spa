@@ -27,6 +27,4 @@ const UiLoaderEvents = () => {
     );
 };
 
-
-
 export default UiLoaderEvents;

@@ -27,12 +27,9 @@ const ArtistEventList = ({ events, isEventsLoading }) => {
     return (
         <div className="card artist-events">
             <h3 className="artist-events__title">Upcoming Events</h3>
-
             {eventItems}
         </div>
     );
 };
-
-
 
 export default ArtistEventList;

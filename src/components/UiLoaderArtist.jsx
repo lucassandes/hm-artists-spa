@@ -11,6 +11,4 @@ const UiLoaderArtist = () => {
     );
 };
 
-
-
 export default UiLoaderArtist;

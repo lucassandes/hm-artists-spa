@@ -1,5 +1,3 @@
-
-
 import React from "react";
 import { mount } from "enzyme";
 import { configure } from 'enzyme';
@@ -59,7 +57,6 @@ describe("Artist", () => {
 
         it("shows `on tour` badge when artist has concerts", () => {
             const ontour = artist().find(".on-tour-badge").first();
-            console.log(ontour);
             expect(ontour.length).toBe(1);
         });
 
@@ -85,7 +82,6 @@ describe("Artist", () => {
      
         it("DOES NOT show `on tour` badge when artist has concerts", () => {
             const ontour = artist().find(".on-tour-badge").first();
-            console.log(ontour);
             expect(ontour.length).toBe(0);
         });
     });

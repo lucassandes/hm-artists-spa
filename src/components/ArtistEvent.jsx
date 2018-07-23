@@ -18,13 +18,8 @@ const Event = ({ event }) => {
         <div className="artist-event__venue-city">{event.venue.city}</div>
         <div className="artist-event__venue-country">{event.venue.country}</div>
       </div>
-
-
-
     </div>
   );
 };
-
-
 
 export default Event;
