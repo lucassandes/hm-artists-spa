@@ -1,19 +1,7 @@
 import React from 'react';
 
 const Event = ({ event }) => {
-  if (!event) {
-    return (
-      <div>Search an artist...</div>
-    );
-  }
-
-
-  //   Event Venue
-  //   ■ Event City
-  //   ■ Event Country
-  //   ■ Event Date
   const eventDate = new Date(event.datetime);
-
   return (
     <div className="artist-event__event d-flex-center">
       <div className="artist-event__date">
@@ -31,7 +19,6 @@ const Event = ({ event }) => {
         <div className="artist-event__venue-country">{event.venue.country}</div>
       </div>
 
-      {/* <a class="button" href={event.offers[0].url} target="_blank" > {event.offers[0].type} </a> */}
 
 
     </div>

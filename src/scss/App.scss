@@ -1,14 +1,18 @@
 @import "Variables.scss";
 @import "Utilities.scss";
+@import "UiLoader.scss";
 @import "Header.scss";
 @import "Artist.scss";
 @import "ArtistEvent.scss";
 @import "Header.scss";
 
-
+html, body, #root {
+  height: 100%;
+}
 .App {
   text-align: center;
   background-color: $gray-100;
+  min-height: 100%;
 }
 
 
