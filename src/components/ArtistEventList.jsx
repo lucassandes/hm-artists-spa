@@ -1,15 +1,17 @@
 import React from 'react';
 import ArtistEvent from './ArtistEvent.jsx';
+import UiLoaderEvents from './UiLoaderEvents.jsx';
+const ArtistEventList = ({ events, isEventsLoading }) => {
 
-const ArtistEventList = ({ events }) => {
-   
-    if (!events) {
+    if (!events || isEventsLoading) {
         return (
-            <div>Loading...</div>
+            <UiLoaderEvents/>
         );
-    } else if(events.length === 0) {
-        return(
-            <div>No Events found</div>
+    } else if (events.length === 0) {
+        return (
+            <div className="card artist-events">
+                <div className="artist-event__404">No events found :(</div>
+            </div>
         );
     }
 
@@ -25,6 +27,7 @@ const ArtistEventList = ({ events }) => {
     return (
         <div className="card artist-events">
             <h3 className="artist-events__title">Upcoming Events</h3>
+
             {eventItems}
         </div>
     );

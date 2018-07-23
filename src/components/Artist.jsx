@@ -1,18 +1,23 @@
 import React from 'react';
-import ArtistEvent from './ArtistEvent.jsx';
+import UiLoaderArtist from './UiLoaderArtist.jsx';
 
-const Artist = ({ artist, events }) => {
-  if (!artist) {
+const Artist = ({ artist, isArtistLoading }) => {
+  if (artist === null || isArtistLoading) {
     return (
-      <div>Search an artist...</div>
+      <UiLoaderArtist />
     );
+  } else if (!artist) {
+    return (
+      <div className="artist-404">Artist not found :( <br /> Please, try searching another one.</div>
+    )
   }
 
-  let teste = { "thumb_url": "https://s3.amazonaws.com/bit-photos/thumb/8305698.jpeg", "mbid": "728ea90d-279b-4201-a8c4-597830883150", "facebook_page_url": "https://www.facebook.com/paramore", "image_url": "https://s3.amazonaws.com/bit-photos/large/8305698.jpeg", "name": "Paramore", "id": "203", "tracker_count": 3292522, "upcoming_event_count": 55, "url": "https://www.bandsintown.com/a/203?came_from=267&app_id=strignsad" }
   return (
+
     <div className="card">
-      <img src={artist.thumb_url} className="artist-picture" />
-      
+
+      <img src={artist.thumb_url} alt={artist.name +  " Picture"} className="artist-picture" />
+
       <div className="artist-info">
         <h1 className="artist-name">{artist.name}</h1>
         {artist.upcoming_event_count > 0 &&

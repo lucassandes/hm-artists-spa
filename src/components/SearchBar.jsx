@@ -8,49 +8,61 @@ import IconSearch from '../img/icon_search.svg';
 
 const API_URL = 'https://rest.bandsintown.com';
 const API_KEY = 'somekey';
+
+
 class SearchBar extends Component {
     constructor(props) {
         super(props);
-        console.log(props);
         this.state = {
-            artistName: "paramore"
+            artistName: "",
         };
         this.searchArtist = this.searchArtist.bind(this);
         this.handleChange = this.handleChange.bind(this);
+        this.onFormSubmit = this.onFormSubmit.bind(this);
     }
 
     handleChange(event) {
         this.setState({ artistName: event.target.value });
     }
 
-    componentDidMount(){
-       this.searchArtist();
-    }
-    searchArtist() {
 
-        axios.get(`${API_URL}/artists/${this.state.artistName}?app_id=${API_KEY}`)
-            .then((response) => {
-                // handle success
-                this.props.updateState("artist", response.data);
-                console.log("Boolean", Boolean(response.data));
-                if(response.data) {
-                    this.searchEvents();
-                } else {
-                    this.props.updateState("events", null);
-                }
-                
-                console.log(response);
-            })
-            .catch(function (error) {
-                // handle error
-                console.log(error);
-            })
-            .then(function () {
-                // always executed
-            });
+
+    onFormSubmit(event) {
+        event.preventDefault();
+
+        this.searchArtist();
+
+    }
+
+    searchArtist() {
+        if (this.state.artistName) {
+            this.props.updateState("isArtistLoading", true);
+            this.props.updateState("isEventsLoading", true);
+            axios.get(`${API_URL}/artists/${this.state.artistName}?app_id=${API_KEY}`)
+                .then((response) => {
+                    // handle success
+                    this.props.updateState("artist", response.data);
+                    if (response.data) {
+                        this.searchEvents();
+
+                    } else {
+                        this.props.updateState("events", null);
+                    }
+                    console.log(response);
+                })
+                .catch(function (error) {
+                    console.log(error);
+                })
+                .then(() => {
+                    this.setState({ artistName: "" });
+                    this.props.updateState("isArtistLoading", false);
+                });
+
+        }
     }
 
     searchEvents() {
+        this.props.updateState("isEventsLoading", true);
 
         axios.get(`${API_URL}/artists/${this.state.artistName}/events?app_id=${API_KEY}`)
             .then((response) => {
@@ -62,14 +74,14 @@ class SearchBar extends Component {
                 // handle error
                 console.log(error);
             })
-            .then(function () {
+            .then(() => {
+                this.props.updateState("isEventsLoading", false);
                 // always executed
             });
 
     }
     render() {
         const { artistName } = this.state;
-        const handleChange = this.handleChange;
         return (
             <div className="header" >
                 <div className="container">
@@ -77,12 +89,14 @@ class SearchBar extends Component {
                         <div className="six columns">
                             <img src={Logo} className="u-pull-left" alt="logo" />
                         </div>
-                        
+
                         <div className="six columns p-relative">
-                            <input type="text" className="u-full-width search-bar__input" placeholder="Search any band" value={artistName} onChange={this.handleChange} />
-                            <button className="search-bar__button d-flex-center" onClick={this.searchArtist}>
-                                <img src={IconSearch} className="search-bar__icon" alt="Icon Search" />
-                            </button>
+                            <form onSubmit={this.onFormSubmit}>
+                                <input type="text" className="u-full-width search-bar__input" placeholder="Search any band" value={artistName} onChange={this.handleChange} />
+                                <button type="submit" className="search-bar__button d-flex-center" >
+                                    <img src={IconSearch} className="search-bar__icon" alt="Icon Search" />
+                                </button>
+                            </form>
                         </div>
                     </div>
                 </div>
