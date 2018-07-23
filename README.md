@@ -1,6 +1,8 @@
 # Artist SPA
 
-Simple SPA app to find concerts/events of artists. You can check this project running here.
+Simple SPA app to find concerts/events of artists. 
+
+## [LIVE DEMO](https://lucassandes.github.io/hm-artists-spa/)
 
 ## Running Locally
 1. Download this repo
@@ -9,6 +11,11 @@ Simple SPA app to find concerts/events of artists. You can check this project ru
 
 ## Testing
 `$ npm run test`
+
+## Room for improvement
+- More tests
+- Have a better home page for when the user is using rhe app for the first time
+- Implement cache
 
 ## Resources used
 
