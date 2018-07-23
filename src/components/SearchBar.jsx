@@ -76,7 +76,6 @@ class SearchBar extends Component {
             })
             .then(() => {
                 this.props.updateState("isEventsLoading", false);
-                // always executed
             });
 
     }

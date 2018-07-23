@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import Artist from './components/Artist.jsx';
-import './css/app.css';
+import './css/App.css';
 import SearchBar from './components/SearchBar.jsx';
 import ArtistEventList from './components/ArtistEventList.jsx';
 
@@ -32,7 +32,7 @@ class App extends Component {
         <div className="container">
           <div className="row">
             <div className="four columns">
-              <Artist artist={artist} events={events} isArtistLoading={isArtistLoading} />
+              <Artist artist={artist} isArtistLoading={isArtistLoading} />
             </div>
 
             {/* In case artist is not found, don't show eventlist */}
