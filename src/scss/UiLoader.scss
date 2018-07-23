@@ -1,0 +1,74 @@
+.ui-loader {}
+
+.ui-loader__date {
+    border: 1px solid $gray-200;
+    display: inline-block;
+    margin-right: 1.5rem;
+    width: 5.6rem;
+    height: 6.4rem;
+}
+
+.ui-loader__month {
+    height: 2.4rem;
+    background: $gray-200;
+    color: $white;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    text-transform: uppercase;
+}
+
+.ui-loader_day {
+    font-size: 2.4rem;
+    height: 3.8rem;
+    text-align: center;
+}
+
+.ui-loader__big-block,
+.ui-loader__small-block,
+.ui-loader__medium-block {
+    height: 1.6rem;
+    margin-bottom: 0.7rem;
+    max-width: 100%;
+}
+
+.ui-loader__big-block:last-child,
+.ui-loader__small-block:last-child,
+.ui-loader__medium-block:last-child {
+    margin-bottom: 0;
+}
+
+.ui-loader__big-block {
+    width: 20rem;
+}
+
+.ui-loader__big-block--tall {
+    height: 2.4rem;
+    margin-bottom: 2.0rem;
+}
+
+.ui-loader__small-block {
+    width: 10rem;
+}
+
+.ui-loader__medium-block {
+    width: 15rem;
+}
+
+.ui-loader__circle {
+    position: relative;
+    border-radius: 50%;
+    width: 8.5rem;
+    height: 8.5rem;
+    margin: 0 auto;
+    margin-bottom: 2rem;
+}
+
+@media (min-width: $breakpoint) {
+    .ui-loader__circle  {
+        width: 100%;
+        height: auto;
+        padding-top: 100%;
+        margin-bottom: 2rem;
+       
+    }
+}
